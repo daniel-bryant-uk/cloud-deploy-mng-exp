@@ -12,7 +12,7 @@ resources:
       initializeParams: 
         sourceImage: https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-7-wheezy-v20150526
     networkInterfaces: 
-    - network: https://www.googleapis.com/compute/v1/projects/kubernetes-play/global/networks/default
+    - network: $(ref.a-new-network.selfLink)
       accessConfigs:
       - name: External NAT
         type: ONE_TO_ONE_NAT
@@ -29,7 +29,11 @@ resources:
       initializeParams:
         sourceImage: https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-7-wheezy-v20150526
     networkInterfaces:
-    - network: https://www.googleapis.com/compute/v1/projects/kubernetes-play/global/networks/default
+    - network: $(ref.a-new-network.selfLink)
       accessConfigs:
       - name: External NAT
         type: ONE_TO_ONE_NAT
+- name: a-new-network
+  type: compute.v1.network
+  properties:
+    IPv4Range: 10.0.0.1/16
