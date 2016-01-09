@@ -10,7 +10,7 @@ resources:
       boot: true
       autoDelete: true
       initializeParams: 
-        sourceImage: https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-7-wheezy-v20150526
+        sourceImage: https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-7-wheezy-v20150603 
     networkInterfaces: 
     - network: $(ref.a-new-network.selfLink)
       accessConfigs:
@@ -27,7 +27,7 @@ resources:
       boot: true
       autoDelete: true
       initializeParams:
-        sourceImage: https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-7-wheezy-v20150526
+        sourceImage: https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-7-wheezy-v20150603 
     networkInterfaces:
     - network: $(ref.a-new-network.selfLink)
       accessConfigs:
